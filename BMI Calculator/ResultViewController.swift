@@ -10,7 +10,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    var bmi : String = ""
+    var bmi : BMI?
+    
     
     @IBOutlet weak var bmiResult: UILabel!
 
@@ -20,7 +21,9 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bmiResult.text = bmi
+        bmiResult.text = bmi?.getFormattedBMIValue()
+        advise.text = bmi?.advice
+        view.backgroundColor = bmi?.color
     }
     
     
